@@ -63,7 +63,7 @@ arrow_right.addEventListener(`click`, () => {
 
 	gererPoint(counter)
 })
-console.log(arrow_right)
+
 
 
 //gestion des bullets points
