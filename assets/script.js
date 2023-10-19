@@ -19,48 +19,38 @@ const slides = [
 
 //Gestion de la flèche gauche
 
+
 let counter = 0
 
 const arrow_left = document.querySelector(`.arrow_left`)
 arrow_left.addEventListener(`click`, () => {
-	console.log("j'ai cliqué sur la flèche gauche")
+	
 	counter = counter - 1
-	console.log(counter, slides[counter])
 	if (counter < 0) {
 		counter = slides.length - 1
 	}
-	
 	const baliseImage = document.querySelector(".banner-img");
-
-	console.log(counter)
-	console.log("image dans le slide[counter]", slides[counter].image)
-
 	baliseImage.src = `./assets/images/slideshow/${slides[counter].image}`;
-
 	tagLine = slides[counter].tagLine;
 	document.querySelector(`p`).innerHTML = tagLine;
 	gererPoint(counter)
 })
-console.log(arrow_left)
+
 
 
 //Gestion de la flèche droite
 
 const arrow_right = document.querySelector(`.arrow_right`)
 arrow_right.addEventListener(`click`, () => {
-	console.log("j'ai cliqué sur la flèche droite")
+	
 	counter = counter + 1
-	console.log(counter, slides[counter])
 	if (counter >= slides.length) {
 		counter = 0
 	}
 	let baliseImage = document.querySelector(".banner-img")
-
 	baliseImage.src = `./assets/images/slideshow/${slides[counter].image}`;
-
 	tagLine = slides[counter].tagLine;
 	document.querySelector(`p`).innerHTML = tagLine;
-
 	gererPoint(counter)
 })
 
@@ -74,9 +64,8 @@ let dot = ""
 function gererPoint(numeroPointAallumer) {
 	
 	let listePoints = document.querySelectorAll(".dot")
-	//console.log(listePoints)
+	
 	for (let i = 0; i < listePoints.length; i++) {
-
 		if (i == numeroPointAallumer) {
 			//console.log("j'allume le point ", i)
 			listePoints[i].classList.add("dot_selected")
