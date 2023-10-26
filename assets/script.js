@@ -28,6 +28,7 @@ arrow_left.addEventListener(`click`, () => {
 	counter = counter - 1
 	if (counter < 0) {
 		counter = slides.length - 1
+		
 	}
 	const baliseImage = document.querySelector(".banner-img");
 	baliseImage.src = `./assets/images/slideshow/${slides[counter].image}`;
